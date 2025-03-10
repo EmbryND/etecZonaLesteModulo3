@@ -1,0 +1,86 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    font-family: 'Sigmar', sans-serif;
+    text-align: center;
+    border-bottom: 2px solid #444;
+}
+
+.icone_pagina {
+    width: 90px;
+    margin-right: 10px;
+}
+
+.fs-4 {
+    color: #FFD700; /* Gold color */
+}
+
+.secao_playstation, .secao_xbox, .secao_nintendo {
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    margin: 20px 0;
+    font-family: 'Sigmar', sans-serif;
+}
+
+.secao_playstation {
+    background-color: #0077FF;
+}
+
+.secao_xbox {
+    background-color: #28a745;
+}
+
+.secao_nintendo {
+    background-color: #e60012;
+}
+
+.produtos_playstation, .produtos_xbox, .produtos_nintendo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 10px;
+    margin: 0 5%;
+}
+
+.produto_item {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.produto_item img {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.produto_item img:hover {
+    transform: scale(1.1);
+}
+
+.nome_playstation, .nome_xbox, .nome_nintendo {
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFD700;
+}
+
+.preco_playstation, .preco_xbox, .preco_nintendo {
+    font-weight: 700;
+    font-size: 20px;
+    color: #FF6F00;
+}
+
+img {
+    width: 280px;
+}
