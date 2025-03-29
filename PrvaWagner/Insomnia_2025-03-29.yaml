@@ -1,0 +1,131 @@
+type: collection.insomnia.rest/5.0
+name: ProvaWagner
+meta:
+  id: wrk_c802e57b09854b31b457c64254ba24bb
+  created: 1743215361759
+  modified: 1743215361759
+collection:
+  - url: http://localhost:8080/api/v1/pessoas/listar
+    name: Listar
+    meta:
+      id: req_5447b12d4bee47c599fae09202a673a5
+      created: 1743215365268
+      modified: 1743222052133
+      isPrivate: false
+      sortKey: -1743215365268
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.0.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/v1/alunos/inserir
+    name: New Request
+    meta:
+      id: req_fdffaa30a7954633a0a7fececdb5fa3d
+      created: 1743221430515
+      modified: 1743222232971
+      isPrivate: false
+      sortKey: -1743215365168
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "Gustavo Nascimento",
+        	"idade": 24,
+        	"cpf": "867.011.910-29",
+        	"curso": "Desenvolvimento de Sistemas"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/v1/professores/inserir
+    name: New Request
+    meta:
+      id: req_8f553573a1264184a6ae497dcf59186a
+      created: 1743221575083
+      modified: 1743221657863
+      isPrivate: false
+      sortKey: -1743215365068
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "Ediney Ciasi",
+        	"idade": 48,
+        	"cpf": "433.655.360-27",
+        	"disciplina": "Programação Web 1"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/v1/pessoa/alterar
+    name: New Request
+    meta:
+      id: req_873dc6751d3e4de29af575fdd882077d
+      created: 1743221692963
+      modified: 1743222253059
+      isPrivate: false
+      sortKey: -1743215364968
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "nomeAntigo": "Gustavo Nascimento",
+            "novoNome": "Gabriel Loirinha"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_7d36a56655263860818e4538673496c985a1af1f
+    created: 1743215361763
+    modified: 1743215361763
+environments:
+  name: Base Environment
+  meta:
+    id: env_7d36a56655263860818e4538673496c985a1af1f
+    created: 1743215361762
+    modified: 1743215361762
+    isPrivate: false
