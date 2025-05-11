@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Registro</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        // Importa as funções necessárias do Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyADwf9PZZBKCtg-g1a-Yqu2ordBK77iI_s",
+          authDomain: "calendarioescolar-1ec90.firebaseapp.com",
+          projectId: "calendarioescolar-1ec90",
+          storageBucket: "calendarioescolar-1ec90.firebasestorage.app",
+          messagingSenderId: "26382604444",
+          appId: "1:26382604444:web:8a5ea3f8ec54bab6f33559"
+        };
+      
+        // Inicializa o Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        // Função para registrar o usuário
+        function registerUser() {
+            const email = document.querySelector("#register-email").value;
+            const password = document.querySelector("#register-password").value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log("Bem vindo " + user + "!");
+                    alert("Registro bem-sucedido!");
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log("Erro ao registrar:", errorCode, errorMessage);
+                    alert("Erro ao registrar: " + errorMessage);
+                });
+        }
+
+        // Função para fazer login do usuário
+        function loginUser() {
+            const email = document.querySelector("#login-email").value;
+            const password = document.querySelector("#login-password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log("Usuário logado:", user);
+                    alert("Login bem-sucedido!");
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error("Erro ao logar:", errorCode, errorMessage);
+                    alert("Erro ao logar: " + errorMessage);
+                });
+        }
+        window.registerUser = registerUser;
+        window.loginUser = loginUser;
+    </script>
+</head>
+<body>
+    <h1>Faça login ou registre-se!</h1>
+    
+    <!-- Formulário de Registro -->
+    <div>
+        <h2>Registrar-se</h2>
+        <label for="register-email">E-mail:</label>
+        <input type="email" id="register-email" required><br><br>
+        <label for="register-password">Senha:</label>
+        <input type="password" id="register-password" required><br><br>
+        <button type="button" onclick="registerUser()">Registrar-se</button>
+    </div>
+
+    <hr>
+
+    <!-- Formulário de Login -->
+    <div>
+        <h2>Login</h2>
+        <label for="login-email">E-mail:</label>
+        <input type="email" id="login-email" required><br><br>
+        <label for="login-password">Senha:</label>
+        <input type="password" id="login-password" required><br><br>
+        <button type="button" onclick="loginUser()">Entrar</button>
+    </div>
+</body>
+</html>
